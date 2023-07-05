@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import DebouncedAutocomplete from "./DebouncedAutocomplete";
+import Autocomplete from "react-google-autocomplete";
 
-const MapForm = () => {
+const MapFormApiPlaceAndGeocoding = () => {
   const [address, setAddress] = useState("");
   const [mapIframe, setMapIframe] = useState("");
   const inputRef = useRef(null);
@@ -13,7 +13,8 @@ const MapForm = () => {
     }
   };
 
-  const handleGetMap = async () => {
+  const handleGetMap = async (e) => {
+    e.preventDefault();
     console.log(address);
     if (address) {
       try {
@@ -45,8 +46,10 @@ const MapForm = () => {
 
   return (
     <>
-      <form>
-        <DebouncedAutocomplete
+      <label htmlFor=''>Ingrese su dirección</label>
+      <br />
+      <form onSubmit={handleGetMap}>
+        <Autocomplete
           apiKey={process.env.API_KEY}
           onPlaceSelected={handlePlaceSelect}
           types={["(regions)"]}
@@ -60,9 +63,9 @@ const MapForm = () => {
               west: -59.0,
             },
           }}
-          style={{width: 508}}
+          style={{ width: 508 }}
         />
-        <button onClick={handleGetMap}>Obtener mapa</button>
+        <button type="submit">Obtener mapa</button>
       </form>
       {mapIframe && (
         <iframe
@@ -78,4 +81,4 @@ const MapForm = () => {
   );
 };
 
-export default MapForm;
+export default MapFormApiPlaceAndGeocoding;

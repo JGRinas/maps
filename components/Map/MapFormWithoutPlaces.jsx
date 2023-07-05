@@ -9,7 +9,8 @@ const MapFormWithoutPlaces = () => {
     setAddress(event.target.value);
   };
 
-  const handleGetMap = async () => {
+  const handleGetMap = async (e) => {
+    e.preventDefault();
     if (address) {
       try {
         const response = await fetch(
@@ -39,7 +40,7 @@ const MapFormWithoutPlaces = () => {
 
   return (
     <>
-      <form>
+      <form onSubmit={handleGetMap}>
         <label htmlFor='address'></label>
         <input
           style={{ width: "508px" }}
@@ -51,7 +52,7 @@ const MapFormWithoutPlaces = () => {
           onChange={handlePlaceSelect}
           placeholder='Dirección'
         />
-        <button onClick={handleGetMap}>Obtener mapa</button>
+        <button type='submit'>Obtener mapa</button>
       </form>
       {mapIframe && (
         <iframe

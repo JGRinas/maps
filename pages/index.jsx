@@ -1,5 +1,5 @@
 import React from "react";
-import MapForm from "../components/Map/MapForm";
+import MapFormApiPlaceAndGeocoding from "../components/Map/MapFormApiPlaceAndGeocoding";
 import MapEmbedAddress from "../components/Map/MapEmbedAddress";
 import MapWithTransformUrl from "../components/Map/MapWithTransformUrl";
 import MapWithUrlLocation from "../components/Map/MapWithUrlLocation";
@@ -17,7 +17,7 @@ const Home = () => {
         }}
       >
         <h2>Api places y api geocoding</h2>
-        <MapForm />
+        <MapFormApiPlaceAndGeocoding />
         <ul>
           <li>Es exacta</li>
           <li>Ayuda a los usuarios a encontrar direcciones</li>
