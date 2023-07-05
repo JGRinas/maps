@@ -15,6 +15,27 @@ a {
   box-sizing: border-box;
 }
 
+h2{
+  color: #e6e6e6;
+}
+
+li{
+  color: #e6e6e6;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+label{
+  color: #e6e6e6;
+  font-weight: bold;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -9,10 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^4.0.2",
-    "next": "13.4.8",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^12.2.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "react-google-autocomplete": "^2.7.3"
   },
   "devDependencies": {
